@@ -8,20 +8,20 @@ import { withNavigationViewController } from '@atlaskit/navigation-next';
 import ContentWrapper from '../components/page/ContentWrapper';
 import PageTitle from '../components/page/PageTitle';
 
-import { projectHomeView } from '../routes';
+import DialogTreeView from '../views/DialogTreeView';
 
-class ProjectBacklogPageBase extends Component<{
+class DialogTreePageBase extends Component<{
   navigationViewController: ViewController,
 }> {
   componentDidMount() {
     const { navigationViewController } = this.props;
-    navigationViewController.setView(projectHomeView.id);
+    navigationViewController.setView(DialogTreeView.id);
   }
 
   render() {
     return (
       <ContentWrapper>
-        <PageTitle>My Project</PageTitle>
+        <PageTitle>Dialog Tree</PageTitle>
         <p>
           <Link to="/">Back to Dashboards</Link>
         </p>
@@ -30,5 +30,5 @@ class ProjectBacklogPageBase extends Component<{
   }
 }
 
-const ProjectBacklogPage = withNavigationViewController(ProjectBacklogPageBase);
-export default ProjectBacklogPage; 
+const DialogTreePage = withNavigationViewController(DialogTreePageBase);
+export default DialogTreePage; 

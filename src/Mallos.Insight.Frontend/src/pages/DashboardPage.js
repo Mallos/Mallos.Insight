@@ -8,9 +8,9 @@ import { withNavigationViewController } from '@atlaskit/navigation-next';
 import ContentWrapper from '../components/page/ContentWrapper';
 import PageTitle from '../components/page/PageTitle';
 
-import { productHomeView } from '../routes';
+import DashboardView from '../views/DashboardView';
 
-class HomePageBase extends Component<{
+class DashboardPageBase extends Component<{
   navigationViewController: ViewController,
 }> {
   static contextTypes = {
@@ -23,16 +23,13 @@ class HomePageBase extends Component<{
 
   componentDidMount() {
     const { navigationViewController } = this.props;
-    navigationViewController.setView(productHomeView.id);
+    navigationViewController.setView(DashboardView.id);
   }
 
   render() {
     return (
       <ContentWrapper>
-        <PageTitle>Home Page</PageTitle>
-        <ButtonGroup>
-          <Link to="/projects/my-project">My Project</Link>
-        </ButtonGroup>
+        <PageTitle>Dashboard</PageTitle>
         <ButtonGroup>
           <Button
             appearance="primary"
@@ -46,5 +43,5 @@ class HomePageBase extends Component<{
   }
 }
 
-const HomePage = withNavigationViewController(HomePageBase);
-export default HomePage; 
+const DashboardPage = withNavigationViewController(DashboardPageBase);
+export default DashboardPage; 

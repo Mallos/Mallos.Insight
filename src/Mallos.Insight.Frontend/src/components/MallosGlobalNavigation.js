@@ -75,9 +75,10 @@ export default class MallosGlobalNavigation extends Component {
         createDrawerContents={() => <CreateDrawer onItemClicked={(sender, item) => console.log("Item clicked! ", item)} />}
 
         /* Profile */
+        /* We don't have any support for profiles yet.
         profileTooltip="Eric Tuvesson"
         profileItems={ProfileDropdownMenu}
-        profileIconUrl=""
+        profileIconUrl=""*/
 
         /* Help */
         helpItems={HelpDropdownMenu}
