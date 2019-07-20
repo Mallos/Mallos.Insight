@@ -8,7 +8,7 @@ import {
 } from '@atlaskit/navigation-next';
 
 import MallosGlobalNavigation from './MallosGlobalNavigation';
-import LinkItem, { productHomeView, productIssuesView } from '../routes';
+import LinkItem, { productHomeView, productIssuesView, projectHomeView } from '../routes';
 
 class MallosLayoutManager extends Component<{
   navigationViewController: ViewController,
@@ -17,6 +17,7 @@ class MallosLayoutManager extends Component<{
     const { navigationViewController } = this.props;
     navigationViewController.addView(productHomeView);
     navigationViewController.addView(productIssuesView);
+    navigationViewController.addView(projectHomeView);
   }
 
   render() {

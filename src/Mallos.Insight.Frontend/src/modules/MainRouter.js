@@ -7,6 +7,7 @@ import { NavigationProvider } from '@atlaskit/navigation-next';
 import App from './App';
 import HomePage from '../pages/HomePage';
 import SettingsPage from '../pages/SettingsPage';
+import ProjectBacklogPage from '../pages/ProjectBacklogPage';
 
 export default class MainRouter extends Component {
   constructor() {
@@ -37,6 +38,7 @@ export default class MainRouter extends Component {
         <NavigationProvider>
           <App onNavResize={this.onNavResize}>
             <Switch>
+              <Route path="/projects/my-project" component={ProjectBacklogPage} />
               <Route path="/issues" component={SettingsPage} />
               <Route path="/" component={HomePage} />
             </Switch>

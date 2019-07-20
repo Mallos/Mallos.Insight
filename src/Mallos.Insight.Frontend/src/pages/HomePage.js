@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
 import Button, { ButtonGroup } from '@atlaskit/button';
 import { withNavigationViewController } from '@atlaskit/navigation-next';
 
@@ -28,6 +30,9 @@ class HomePageBase extends Component<{
     return (
       <ContentWrapper>
         <PageTitle>Home Page</PageTitle>
+        <ButtonGroup>
+          <Link to="/projects/my-project">My Project</Link>
+        </ButtonGroup>
         <ButtonGroup>
           <Button
             appearance="primary"
