@@ -2,23 +2,26 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import '@atlaskit/css-reset';
-import { ThemeProvider, light, dark } from '@atlaskit/navigation-next';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import Modal from '@atlaskit/modal-dialog';
 import Page from '@atlaskit/page';
+
+import {
+  AtlaskitThemeProvider,
+  elevation as AkElevations,
+  themed,
+} from '@atlaskit/theme';
 
 import { MallosLayoutManagerViewController } from '../components/MallosLayoutManager';
 
 export default class App extends Component<
   {},
   {
-    themeContext: any,
     themeMode: 'light' | 'dark'
   }> {
   state = {
     flags: [],
     isModalOpen: false,
-    themeContext: 'container',
     themeMode: 'light'
   };
 
@@ -63,23 +66,16 @@ export default class App extends Component<
   }
 
   switchTheme = () => {
-    const { themeContext, themeMode } = this.state;
+    const { themeMode } = this.state;
     this.setState({
-      themeContext: themeContext,
       themeMode: themeMode === 'light' ? 'dark' : 'light',
     });
   };
 
   render() {
-    const { themeContext, themeMode } = this.state;
+    const { themeMode } = this.state;
     return (
-      <ThemeProvider
-        theme={theme => ({
-          ...theme,
-          context: themeContext,
-          mode: themeMode === 'light' ? light : dark,
-        })}
-      >
+      <AtlaskitThemeProvider mode={themeMode}>
         <div>
           <MallosLayoutManagerViewController
             {...this.props}
@@ -112,7 +108,7 @@ export default class App extends Component<
             }
           </div>
         </div>
-      </ThemeProvider>
+      </AtlaskitThemeProvider>
     );
   }
 }
