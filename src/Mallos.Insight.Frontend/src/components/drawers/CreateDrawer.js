@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 import { AtlassianIcon, AtlassianWordmark } from '@atlaskit/logo';
 import { Group, Item } from "@atlaskit/navigation-next";

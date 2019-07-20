@@ -82,6 +82,8 @@ export default class MallosGlobalNavigation extends Component {
 
         /* Help */
         helpItems={HelpDropdownMenu}
+
+        {...this.props}
       />
     );
   }
