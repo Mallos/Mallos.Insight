@@ -1,32 +1,24 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+
+import '@atlaskit/css-reset';
+import { ThemeProvider, light, dark } from '@atlaskit/navigation-next';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import Modal from '@atlaskit/modal-dialog';
 import Page from '@atlaskit/page';
-import '@atlaskit/css-reset';
 
-import {
-  GlobalItem,
-  LayoutManager,
-  NavigationProvider,
-  ThemeProvider,
-  light,
-  dark,
-} from '@atlaskit/navigation-next';
+import { MallosLayoutManagerViewController } from '../components/MallosLayoutManager';
 
-import MallosGlobalNavigation from '../components/MallosGlobalNavigation';
-
-type Props = {};
-type State = {
-  themeContext: any,
-  themeMode: 'light' | 'dark'
-};
-
-export default class App extends Component<Props, State> {
+export default class App extends Component<
+  {},
+  {
+    themeContext: any,
+    themeMode: 'light' | 'dark'
+  }> {
   state = {
     flags: [],
     isModalOpen: false,
-    themeContext: 'light',
+    themeContext: 'container',
     themeMode: 'light'
   };
 
@@ -84,20 +76,14 @@ export default class App extends Component<Props, State> {
       <ThemeProvider
         theme={theme => ({
           ...theme,
-          context: 'container',
+          context: themeContext,
           mode: themeMode === 'light' ? light : dark,
         })}
       >
         <div>
-          <NavigationProvider>
-            <LayoutManager
-              globalNavigation={MallosGlobalNavigation}
-              productNavigation={() => null}
-              containerNavigation={() => null}
-            >
-              {this.props.children}
-            </LayoutManager>
-          </NavigationProvider>
+          <MallosLayoutManagerViewController
+            {...this.props}
+          />
           <div>
             <FlagGroup onDismissed={this.onFlagDismissed}>
               {

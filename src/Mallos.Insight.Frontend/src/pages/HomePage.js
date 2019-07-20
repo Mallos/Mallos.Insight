@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Button, { ButtonGroup } from '@atlaskit/button';
+import { withNavigationViewController } from '@atlaskit/navigation-next';
 
 import ContentWrapper from '../components/page/ContentWrapper';
 import PageTitle from '../components/page/PageTitle';
 
-export default class HomePage extends Component {
+import { productHomeView } from '../routes';
+
+class HomePageBase extends Component<{
+  navigationViewController: ViewController,
+}> {
   static contextTypes = {
     showModal: PropTypes.func,
     addFlag: PropTypes.func,
@@ -13,6 +18,11 @@ export default class HomePage extends Component {
     onCancel: PropTypes.func,
     onClose: PropTypes.func,
   };
+
+  componentDidMount() {
+    const { navigationViewController } = this.props;
+    navigationViewController.setView(productHomeView.id);
+  }
 
   render() {
     return (
@@ -30,3 +40,6 @@ export default class HomePage extends Component {
     );
   }
 }
+
+const HomePage = withNavigationViewController(HomePageBase);
+export default HomePage; 

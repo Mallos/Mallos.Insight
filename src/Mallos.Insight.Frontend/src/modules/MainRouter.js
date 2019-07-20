@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+
+import { NavigationProvider } from '@atlaskit/navigation-next';
+
 import App from './App';
 import HomePage from '../pages/HomePage';
 import SettingsPage from '../pages/SettingsPage';
@@ -22,13 +25,6 @@ export default class MainRouter extends Component {
     };
   }
 
-  appWithPersistentNav = () => (props) => (
-    <App
-      onNavResize={this.onNavResize}
-      {...props}
-    />
-  )
-
   onNavResize = (navOpenState) => {
     this.setState({
       navOpenState,
@@ -37,11 +33,13 @@ export default class MainRouter extends Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route component={this.appWithPersistentNav()}>
-          <Route path="/" component={HomePage} />
-          <Route path="/settings" component={SettingsPage} />
-        </Route>
+      <Router>
+        <NavigationProvider>
+          <App onNavResize={this.onNavResize}>
+            <Route path="/" component={HomePage} />
+            <Route path="/issues" component={SettingsPage} />
+          </App>
+        </NavigationProvider>
       </Router>
     );
   }

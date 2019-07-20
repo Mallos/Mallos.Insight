@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
+import { Link } from "react-router-dom"
+
 import {
   GlobalNav,
   ContainerHeader,
@@ -21,7 +22,7 @@ import SearchDrawer from '../components/drawers/SearchDrawer';
 import HelpDropdownMenu from '../components/help/HelpDropdownMenu';
 import ProfileDropdownMenu from '../components/profile/ProfileDropdownMenu';
 
-export default class MallosGlobalNavigation extends React.Component {
+export default class MallosGlobalNavigation extends Component {
   state = {
     navLinks: [
       ['/', 'Home', DashboardIcon],
@@ -80,22 +81,7 @@ export default class MallosGlobalNavigation extends React.Component {
 
         /* Help */
         helpItems={HelpDropdownMenu}
-      >
-        {
-          this.state.navLinks.map(link => {
-            const [url, title, Icon] = link;
-            return (
-              <Link key={url} to={url}>
-                <Item
-                  icon={<Icon label={title} size="medium" />}
-                  text={title}
-                  isSelected={this.context.router.isActive(url, true)}
-                />
-              </Link>
-            );
-          }, this)
-        }
-      </GlobalNavigation>
+      />
     );
   }
 }

@@ -1,22 +1,29 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import Button, { ButtonGroup } from '@atlaskit/button';
+import { withNavigationViewController } from '@atlaskit/navigation-next';
 
 import ContentWrapper from '../components/page/ContentWrapper';
 import PageTitle from '../components/page/PageTitle';
 
-export default class HomePage extends Component {
+import { productIssuesView } from '../routes';
+
+class SettingsPageBase extends Component<{
+  navigationViewController: ViewController,
+}> {
+  componentDidMount() {
+    const { navigationViewController } = this.props;
+    navigationViewController.setView(productIssuesView.id);
+  }
+
   render() {
     return (
       <ContentWrapper>
         <PageTitle>Settings</PageTitle>
-        <ButtonGroup>
-          <Button
-            appearance="primary"
-            onClick={this.context.showModal}
-            onClose={() => { }}
-          >Settings page</Button>
-          <Button onClick={this.context.addFlag}>click to view Atlaskit flag</Button>
-        </ButtonGroup>
       </ContentWrapper>
     );
   }
 }
+
+const SettingsPage = withNavigationViewController(SettingsPageBase);
+export default SettingsPage; 
