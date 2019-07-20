@@ -2,10 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component, Fragment } from "react";
 
 import { AtlassianIcon, AtlassianWordmark } from '@atlaskit/logo';
-import {
-  Group,
-  Item,
-} from "@atlaskit/navigation-next";
+import { Group, Item } from "@atlaskit/navigation-next";
 
 import BitbucketBranchesIcon from "@atlaskit/icon/glyph/bitbucket/branches";
 import PageIcon from "@atlaskit/icon/glyph/page";
@@ -33,13 +30,11 @@ const createItems = [
   },
 ];
 
-type Props = {
+export default class CreateDrawer extends Component<
+{
   onItemClicked: PropTypes.func
-};
-type State = {
-};
-
-export default class CreateDrawer extends Component<Props, State> {
+}, 
+{}> {
   render() {
     return (
       <div>

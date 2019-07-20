@@ -12,13 +12,13 @@ import {
   themed,
 } from '@atlaskit/theme';
 
-import { MallosLayoutManagerViewController } from '../components/MallosLayoutManager';
+import { MallosLayoutManagerViewController } from './components/MallosLayoutManager';
 
 export default class App extends Component<
-  {},
-  {
-    themeMode: 'light' | 'dark'
-  }> {
+{},
+{
+  themeMode: 'light' | 'dark'
+}> {
   state = {
     flags: [],
     isModalOpen: false,

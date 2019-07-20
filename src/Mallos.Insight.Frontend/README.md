@@ -4,12 +4,10 @@ React app using Atlaskit UI Kit
 ### Ideas of things I might add
 - [ ] Dashboard
   - [ ] Registered Items
-- [ ] Behavior Trees
-  - [ ] Behavior Tree
-    - [ ] Editor
-    - [ ] Debugger
-- [ ] Dialog Trees
-  - [ ] Dialog Tree
-    - [ ] Editor
-    - [ ] Debugger
+- [ ] Behavior Tree
+  - [ ] Editor
+  - [ ] Debugger
+- [ ] Dialog Tree
+  - [ ] Editor
+  - [ ] Debugger
 

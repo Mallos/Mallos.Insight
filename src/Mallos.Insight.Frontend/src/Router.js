@@ -6,9 +6,10 @@ import { NavigationProvider } from '@atlaskit/navigation-next';
 
 import App from './App';
 
-import BehaviorTreePage from '../pages/BehaviorTreePage';
-import DialogTreePage from '../pages/DialogTreePage';
-import DashboardPage from '../pages/DashboardPage';
+// Import all the pages
+import BehaviorTreePage from './pages/BehaviorTreePage';
+import DialogTreePage from './pages/DialogTreePage';
+import DashboardPage from './pages/DashboardPage';
 
 export default class MainRouter extends Component {
   constructor() {
