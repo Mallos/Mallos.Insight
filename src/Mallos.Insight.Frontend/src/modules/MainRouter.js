@@ -36,8 +36,10 @@ export default class MainRouter extends Component {
       <Router>
         <NavigationProvider>
           <App onNavResize={this.onNavResize}>
-            <Route path="/" component={HomePage} />
-            <Route path="/issues" component={SettingsPage} />
+            <Switch>
+              <Route path="/issues" component={SettingsPage} />
+              <Route path="/" component={HomePage} />
+            </Switch>
           </App>
         </NavigationProvider>
       </Router>

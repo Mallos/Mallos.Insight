@@ -27,7 +27,7 @@ class HomePageBase extends Component<{
   render() {
     return (
       <ContentWrapper>
-        <PageTitle>Home</PageTitle>
+        <PageTitle>Home Page</PageTitle>
         <ButtonGroup>
           <Button
             appearance="primary"

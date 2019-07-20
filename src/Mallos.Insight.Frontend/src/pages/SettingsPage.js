@@ -19,7 +19,7 @@ class SettingsPageBase extends Component<{
   render() {
     return (
       <ContentWrapper>
-        <PageTitle>Settings</PageTitle>
+        <PageTitle>Settings Page</PageTitle>
       </ContentWrapper>
     );
   }
