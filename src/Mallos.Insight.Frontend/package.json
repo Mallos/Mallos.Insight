@@ -1,27 +1,46 @@
 {
   "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-transition-group": "^4.1.1"
-  },
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack --config webpack.config.js -p"
   },
+  "dependencies": {
+    "@atlaskit/avatar": "^14.0.9",
+    "@atlaskit/button": "^9.0.7",
+    "@atlaskit/css-reset": "^3.0.1",
+    "@atlaskit/drawer": "^4.2.2",
+    "@atlaskit/dropdown-menu": "^6.1.26",
+    "@atlaskit/flag": "^9.0.7",
+    "@atlaskit/global-navigation": "^7.3.4",
+    "@atlaskit/icon": "^13.4.0",
+    "@atlaskit/inline-edit": "^7.0.7",
+    "@atlaskit/modal-dialog": "^6.0.10",
+    "@atlaskit/navigation-next": "^6.3.7",
+    "@atlaskit/page": "^8.0.4",
+    "@atlaskit/theme": "^6.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.2.4",
+    "react-intl": "^2.9.0",
+    "react-router": "^3.2.0",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^3.2.6"
+  },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
-    "css-loader": "^3.0.0",
+    "css-loader": "^3.1.0",
+    "file-loader": "^4.1.0",
     "html-loader": "^0.5.5",
     "style-loader": "^0.23.1",
-    "webpack": "^4.34.0",
-    "webpack-cli": "^3.3.4",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
   "engines": {
