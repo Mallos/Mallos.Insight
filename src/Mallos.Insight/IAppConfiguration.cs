@@ -1,8 +1,6 @@
 ﻿namespace Mallos.Insight
 {
-    using Mallos.Insight.Nancy;
-
-    interface IAppConfiguration
+    public interface IAppConfiguration
     {
         Logging Logging { get; }
     }

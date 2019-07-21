@@ -8,8 +8,10 @@ import App from './App';
 
 // Import all the pages
 import BehaviorTreePage from './pages/BehaviorTreePage';
-import DialogTreePage from './pages/DialogTreePage';
+import ConsolePage from './pages/ConsolePage';
 import DashboardPage from './pages/DashboardPage';
+import DialogTreePage from './pages/DialogTreePage';
+import ExplorerPage from './pages/ExplorerPage';
 
 export default class MainRouter extends Component {
   constructor() {
@@ -43,6 +45,8 @@ export default class MainRouter extends Component {
               <Route path="/behaviortree/my-tree" component={BehaviorTreePage} />
               <Route path="/behaviortree" component={BehaviorTreePage} />
               <Route path="/dialogtree" component={DialogTreePage} />
+              <Route path="/console" component={ConsolePage} />
+              <Route path="/explorer" component={ExplorerPage} />
               <Route path="/" component={DashboardPage} />
             </Switch>
           </App>

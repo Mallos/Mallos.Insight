@@ -1,12 +1,12 @@
 namespace Mallos.Insight.Nancy
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
     using global::Nancy;
     using global::Nancy.Bootstrapper;
     using global::Nancy.Conventions;
     using global::Nancy.TinyIoc;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
 
     class Bootstrapper : DefaultNancyBootstrapper
     {
@@ -26,7 +26,7 @@ namespace Mallos.Insight.Nancy
                 return base.Modules.Concat(new[]
                 {
                     // Register our API Controllers manually
-                    new ModuleRegistration(typeof(Api.HomeModule))
+                    new ModuleRegistration(typeof(Api.MallosModule))
                 });
             }
         }
@@ -52,8 +52,7 @@ namespace Mallos.Insight.Nancy
                 var filename = ScopeRequestedFilename(context.Request.Path);
                 if (!embeddedResourceReader.Exist(filename))
                 {
-                    // if it doesn't exist return the 404 page.
-                    filename = "Mallos.Insight.Content.404.html";
+                    filename = "Mallos.Insight.Content.app.html";
                 }
 
                 // return the requested embedded file.

@@ -1,12 +1,12 @@
 ﻿namespace Mallos.Insight
 {
+    using System.IO;
     using Mallos.Insight.Nancy;
     using Microsoft.AspNetCore.Hosting;
-    using System.IO;
 
-    public class Server
+    public class Server : IServer
     {
-        public Server()
+        public Server(AppConfiguration configuration)
         {
 
         }

@@ -3,7 +3,10 @@ import LinkItem from './LinkItem';
 import { JiraIcon, JiraWordmark } from '@atlaskit/logo';
 
 import DashboardIcon from '@atlaskit/icon/glyph/dashboard';
-import PortfolioIcon from '@atlaskit/icon/glyph/portfolio';
+import DepartmentIcon from '@atlaskit/icon/glyph/department';
+import RoadmapIcon from '@atlaskit/icon/glyph/roadmap';
+import EditorCodeIcon from '@atlaskit/icon/glyph/editor/code';
+import CodeIcon from '@atlaskit/icon/glyph/code';
 
 export const DashboardView = {
   id: 'product/dashboard',
@@ -35,10 +38,13 @@ export const DashboardView = {
           to: '/',
         },
         {
+          type: 'Separator',
+        },
+        {
           type: 'InlineComponent',
           component: LinkItem,
           id: 'behaviortree',
-          before: PortfolioIcon,
+          before: DepartmentIcon,
           text: 'Behavior Trees',
           to: '/behaviortree',
         },
@@ -46,9 +52,28 @@ export const DashboardView = {
           type: 'InlineComponent',
           component: LinkItem,
           id: 'dialogtrees',
-          before: PortfolioIcon,
+          before: RoadmapIcon,
           text: 'Dialog Trees',
           to: '/dialogtree',
+        },
+        {
+          type: 'Separator',
+        },
+        {
+          type: 'InlineComponent',
+          component: LinkItem,
+          id: 'apiexplorer',
+          before: EditorCodeIcon,
+          text: 'API Explorer',
+          to: '/explorer',
+        },
+        {
+          type: 'InlineComponent',
+          component: LinkItem,
+          id: 'console',
+          before: CodeIcon,
+          text: 'Console',
+          to: '/console',
         },
       ],
     },
