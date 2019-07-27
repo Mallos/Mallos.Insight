@@ -25,6 +25,7 @@
     "@atlaskit/tooltip": "^15.0.5",
     "axios": "^0.19.0",
     "codemirror": "^5.48.2",
+    "litegraph.js": "^0.7.0",
     "prop-types": "^15.6.0",
     "react": "^16.4.2",
     "react-codemirror2": "^6.0.0",

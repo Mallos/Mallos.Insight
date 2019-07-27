@@ -8,7 +8,20 @@ import { withNavigationViewController } from '@atlaskit/navigation-next';
 import ContentWrapper from '../components/page/ContentWrapper';
 import PageTitle from '../components/page/PageTitle';
 
+import 'litegraph.js/css/litegraph.css';
+import { LiteGraph, LGraph, LGraphCanvas } from 'litegraph.js';
+
 import BehaviorTreeView from '../views/BehaviorTreeView';
+//node constructor class
+function MyAddNode()
+{
+  this.addInput("A","number");
+  this.addInput("B","number");
+  this.addOutput("A+B","number");
+  this.properties = { precision: 1 };
+}
+MyAddNode.title = "Sum";
+LiteGraph.registerNodeType("basic/sum", MyAddNode );
 
 class BehaviorTreePageBase extends Component<{
   navigationViewController: ViewController,
@@ -16,16 +29,35 @@ class BehaviorTreePageBase extends Component<{
   componentDidMount() {
     const { navigationViewController } = this.props;
     navigationViewController.setView(BehaviorTreeView.id);
+
+
+    var graph = new LGraph();
+ 
+    var canvas = new LGraphCanvas("#mycanvas", graph);
+    
+    const g = LiteGraph;
+    var node_const = LiteGraph.createNode("TASK/const");
+    node_const.pos = [200,200];
+    graph.add(node_const);
+    node_const.setValue(4.5);
+    
+    var node_watch = LiteGraph.createNode("basic/watch");
+    node_watch.pos = [700,200];
+    graph.add(node_watch);
+    
+    node_const.connect(0, node_watch, 0 );
   }
 
   render() {
     return (
-      <ContentWrapper>
+      <div
+        style={{
+          marginTop: '16px',
+          marginLeft: '32px'
+        }}>
         <PageTitle>Behavior Tree</PageTitle>
-        <p>
-          <Link to="/">Back to Dashboards</Link>
-        </p>
-      </ContentWrapper>
+        <canvas id='mycanvas' width='1024' height='720' style={{ border: '1px solid' }}></canvas>
+      </div>
     );
   }
 }

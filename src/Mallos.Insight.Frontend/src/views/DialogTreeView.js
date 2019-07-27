@@ -39,6 +39,7 @@ export const DialogTreeView = {
           type: 'Item',
           id: 'dialogtrees',
           before: FolderIcon,
+          goTo: 'product/dashboard',
           text: 'Back',
         },
       ],
