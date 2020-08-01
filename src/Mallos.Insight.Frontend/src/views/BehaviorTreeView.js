@@ -39,6 +39,7 @@ export const BehaviorTreeView = {
           type: 'Item',
           id: 'back',
           before: FolderIcon,
+          goTo: 'product/dashboard',
           text: 'Back',
         },
       ],

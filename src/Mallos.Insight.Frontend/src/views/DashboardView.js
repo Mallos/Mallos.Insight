@@ -46,6 +46,7 @@ export const DashboardView = {
           id: 'behaviortree',
           before: DepartmentIcon,
           text: 'Behavior Trees',
+          goTo: 'container/behaviortree',
           to: '/behaviortree',
         },
         {
@@ -54,6 +55,7 @@ export const DashboardView = {
           id: 'dialogtrees',
           before: RoadmapIcon,
           text: 'Dialog Trees',
+          goTo: 'container/dialogtree',
           to: '/dialogtree',
         },
         {
